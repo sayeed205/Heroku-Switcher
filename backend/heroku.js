@@ -183,7 +183,7 @@ const main = async () => {
       }, 8000);
 
       console.log("transffering one app is done");
-    } else if (today === 12) {
+    } else if (today === 1) {
       addCollab(heroku2, getAcc1);
 
       setTimeout(() => {
@@ -197,8 +197,6 @@ const main = async () => {
       setTimeout(() => {
         removeCollab(heroku1, getAcc2);
       }, 8000);
-
-      console.log("transffering one app is done");
     } else {
       console.log(`today is ${today}th day don't have to transfer apps`);
     }
