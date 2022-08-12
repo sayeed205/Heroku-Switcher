@@ -1,0 +1,33 @@
+{
+  "name": "heroku-switcher",
+  "version": "1.0.0",
+  "description": "Run your heroku app without worrying about dynos",
+  "main": "server.js",
+  "scripts": {
+    "frontend": "cd ../frontend && npm start",
+    "backend": "nodemon server.js",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "prebuild": "cd ../frontend && npm install && npm run build",
+    "build": "npm install",
+    "postbuild": "node server.js",
+    "start": "npm run build"
+  },
+  "keywords": [
+    "Heroku",
+    "Automation"
+  ],
+  "author": "Sayed",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cron": "^2.1.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "heroku-client": "^3.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.8.1",
+    "mongoose": "^6.5.0",
+    "shelljs": "^0.8.5",
+    "validator": "^13.7.0"
+  }
+}
