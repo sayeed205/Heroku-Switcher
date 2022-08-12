@@ -4,10 +4,10 @@
   "description": "Run your heroku app without worrying about dynos",
   "main": "server.js",
   "scripts": {
-    "frontend": "cd ../frontend && npm start",
-    "backend": "nodemon server.js",
+    "frontend": "cd ./frontend && npm start",
+    "backend": "nodemon ./backend/server.js",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
-    "prebuild": "cd ../frontend && npm install && npm run build",
+    "prebuild": "cd ./frontend && npm install && npm run build",
     "build": "npm install",
     "postbuild": "node server.js",
     "start": "npm run build"
