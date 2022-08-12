@@ -8,9 +8,7 @@
     "backend": "nodemon ./backend/server.js",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
     "prebuild": "cd ./frontend && npm install && npm run build",
-    "build": "npm install",
-    "postbuild": "node ./backend/server.js",
-    "start": "npm run build"
+    "build": "npm install"
   },
   "keywords": [
     "Heroku",
