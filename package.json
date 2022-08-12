@@ -9,7 +9,7 @@
     "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
     "prebuild": "cd ./frontend && npm install && npm run build",
     "build": "npm install",
-    "postbuild": "node server.js",
+    "postbuild": "node ./backend/server.js",
     "start": "npm run build"
   },
   "keywords": [
