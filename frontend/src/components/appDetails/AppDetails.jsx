@@ -27,16 +27,21 @@ const AppDetails = ({ app }) => {
   };
 
   return (
-    <div className="block p-5  bg-white rounded-lg border-2 border-gray-300 shadow-lg ">
-      <div className="pb-2 border-b border-gray-300 text-xl text-center">
+    <div className="flex flex-col items-center lg:max-h-fit justify-center p-5 bg-white rounded-3xl border-2 border-gray-300 shadow-lg ">
+      <div className="pb-2 border-b border-gray-300 text-2xl text-center">
         {app.appName}
       </div>
-      <div className="border-b pb-2">
-        <p>A Heroku Api Key - {app.aHerokuApi}</p>
-        <p>B Heroku Api Key - {app.bHerokuApi}</p>
+      <div className="border-b text-sm flex flex-col gap-8 py-5">
+        <p>
+          <b>Main Heroku Api : </b>
+          {app.aHerokuApi}
+        </p>
+        <p>
+          <b>Second Heroku Api : </b>
+          {app.bHerokuApi}
+        </p>
       </div>
-      <div className="flex justify-center gap-4 pt-3">
-        {/* <button className="btn btn-heroku">edit</button> */}
+      <div className="flex justify-center pt-3">
         <button
           className="bg-red-600 hover:bg-red-900 py-2 px-6 rounded-3xl text-black"
           onClick={handleDelete}

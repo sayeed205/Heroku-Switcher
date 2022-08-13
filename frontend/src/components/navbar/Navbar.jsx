@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const links = [
     { name: "Apps", link: "/apps" },
-    { name: "How to", link: "/how-to" },
+    { name: "Usage", link: "/usage" },
   ];
 
   return (
@@ -40,7 +40,7 @@ const Navbar = () => {
           {user &&
             links.map((link) => (
               <li
-                className="my-7 md:px-3 p-1 text-xl md:my-0 hover:text-heroku lg:hover:bg-heroku lg:hover:text-white rounded transition ease-in duration-300"
+                className="my-7 md:px-3 p-1 text-xl md:my-0 hover:text-heroku lg:hover:bg-heroku lg:hover:text-white rounded-3xl transition ease-in duration-300"
                 key={link.name}
               >
                 <NavLink to={link.link}>{link.name}</NavLink>
@@ -50,7 +50,7 @@ const Navbar = () => {
             <>
               <li
                 key={6969420}
-                className="my-7 md:px-3 p-1 text-xl text-red-600 md:hover:bg-red-600  md:hover:text-white rounded transition duration-300"
+                className="my-7 md:px-3 p-1 text-xl text-red-600 md:hover:bg-red-600 md:hover:text-white rounded-3xl transition duration-300"
               >
                 <button onClick={handleLogout}>Log out</button>
               </li>
@@ -60,7 +60,7 @@ const Navbar = () => {
             <>
               <li
                 key={42069}
-                className="my-7 text-lg py-2 px-6 md:my-0 hover:text-heroku lg:hover:bg-heroku lg:hover:text-white rounded transition ease-in duration-300 text-heroku"
+                className="my-7 text-lg py-2 px-6 md:my-0 hover:text-heroku lg:hover:bg-heroku lg:hover:text-white rounded-3xl transition ease-in duration-300 text-heroku"
               >
                 <Link to={"/login"}>Login</Link>
               </li>

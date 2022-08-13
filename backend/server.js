@@ -31,7 +31,7 @@ app.use("/api/user", userRouter); //add the user router to the app
 let job = new CronJob(
   "0 0 * * * *", //run this script every hour
   function () {
-    shell.exec("node ./heroku.js", function (code, stdout, stderr) {
+    shell.exec("node ./backend/heroku.js", function (code, stdout, stderr) {
       console.log("Exit code:", code);
       console.log("Heroku script output:", stdout);
       console.log("Heroku script stderr:", stderr);

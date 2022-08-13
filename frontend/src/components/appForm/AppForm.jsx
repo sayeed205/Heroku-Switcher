@@ -52,9 +52,9 @@ const AppForm = () => {
   }; // This function is used to handle the submit event.
 
   return (
-    <div className=" py-6 px-12 mt-8 rounded-3xl border-2 border-gray-300 mx-auto lg:mt-20 xl:py-12 xl:px-24">
+    <div className=" py-6  px-12 mt-8 rounded-3xl border-2 border-gray-300 mx-auto lg:mt-20 ">
       <form onSubmit={handleSubmit} className="">
-        <h3 className="block text-center mb-3 border-b-2 border-gray-300 pb-3">
+        <h3 className="block text-2xl text-center mb-3 border-b-2 border-gray-300 pb-3">
           Add New App
         </h3>
         <div className="pt-3 grid grid-cols-1 gap-3">
@@ -74,7 +74,7 @@ const AppForm = () => {
             <input
               type="text"
               className="bg-transparent outline-none border-b-2 font-display text-['18px', '24px'] focus:border-heroku transition-all duration-500"
-              placeholder="First Heroku API Key"
+              placeholder="Main Heroku API Key"
               onChange={(e) => setAHerokuApi(e.target.value)}
               value={aHerokuApi}
               required

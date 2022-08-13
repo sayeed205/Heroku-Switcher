@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Navbar from "./components/navbar/Navbar";
 import LandingPage from "./pages/landingPage/LandingPage";
+import Usage from "./pages/usage/Usage";
 
 function App() {
   const { user } = useAuthContext();
@@ -33,6 +34,7 @@ function App() {
               path="/signup"
               element={!user ? <Signup /> : <Navigate to="/apps" />}
             />
+            <Route path="/usage" element={<Usage />} />
           </Routes>
         </div>
       </BrowserRouter>

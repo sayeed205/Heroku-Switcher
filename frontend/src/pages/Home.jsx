@@ -30,13 +30,15 @@ const Home = () => {
   }, [dispatch, user]); // This useEffect is used to check if the user is logged in.
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1">
-      <div className="order-last lg:order-first bg-white flex justify-center flex-wrap gap-7 p-8 overflow-hidden">
+      <div className="order-last lg:order-first bg-white mt-14 flex justify-center flex-wrap gap-7 p-8 overflow-hidden">
         {apps &&
           apps.map((app) => {
             return <AppDetails key={app._id} app={app} />;
           })}
       </div>
-      <AppForm className="lg:order-last order-first" />
+      <div className="lg:order-last order-first flex items-start justify-center max-h-min">
+        <AppForm />
+      </div>
     </div>
   );
 };
