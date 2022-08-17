@@ -23,21 +23,31 @@ const main = async () => {
 
   const apps = await collection.find({}).toArray();
 
+  const date = new Date();
+  const today = date.getDate();
+  if (today === 15) {
+    console.log(
+      "Today is 15th day of the month, have to transfer all apps from main account to second account\nStrating transfer"
+    );
+  } else if (today === 1) {
+    console.log(
+      "Today is 1st dayof the month, have to transfer all apps from second account to main account\nStrating transfer"
+    );
+  }
+
   for (let app of apps) {
     const heroku1 = new Heroku({ token: app.aHerokuApi });
     const heroku2 = new Heroku({ token: app.bHerokuApi });
     const appName = app.appName;
 
-    const date = new Date();
-    const today = date.getDate();
-
+    //get info about second account
     async function getAcc2() {
-      //get info about second account
       const res = await heroku2.get("/account");
       return res;
     }
+
+    //get info about first account
     async function getAcc1() {
-      //get info about first account
       const res = await heroku1.get("/account");
       return res;
     }
@@ -98,7 +108,7 @@ const main = async () => {
     };
 
     // ============================  Add Collaborator ==============================//
-    const addCollab = async (heroku, getAcc) => {
+    const addCollab = (heroku, getAcc) => {
       getAcc().then((res) => {
         let email = res.email;
         heroku
@@ -109,14 +119,14 @@ const main = async () => {
             );
           })
           .catch((err) => {
-            const msg = "adding collaborator";
+            const msg = `adding collaborator to ${appName} heroku app`;
             errHandler(err, msg);
           });
       });
     };
 
     // ============================ Create Transfer ==============================//
-    const createTransfer = async (heroku, getAcc) => {
+    const createTransfer = (heroku, getAcc) => {
       getAcc().then((res) => {
         let email = res.email;
         heroku
@@ -127,14 +137,14 @@ const main = async () => {
             );
           })
           .catch((err) => {
-            const msg = "creating transfer of the app";
+            const msg = `creating transfer of the app ${appName}`;
             errHandler(err, msg);
           });
       });
     };
 
     // ============================ Accept Transfer ==============================//
-    const acceptTransfer = async (heroku) => {
+    const acceptTransfer = (heroku) => {
       heroku
         .request(acceptTreansferOptions())
         .then((res) => {
@@ -143,13 +153,13 @@ const main = async () => {
           );
         })
         .catch((err) => {
-          const msg = `accepting transfer of the app.`;
+          const msg = `accepting transfer of the app ${appName}`;
           errHandler(err, msg);
         });
     };
 
     // ============================ Remove Collaborator ==============================//
-    const removeCollab = async (heroku, getAcc) => {
+    const removeCollab = (heroku, getAcc) => {
       getAcc().then((res) => {
         let email = res.email;
         heroku
@@ -160,7 +170,7 @@ const main = async () => {
             );
           })
           .catch((err) => {
-            const msg = "removing collaborator";
+            const msg = `removing collaborator from ${appName} heroku app`;
             errHandler(err, msg);
             console.log(err);
           });
@@ -182,7 +192,9 @@ const main = async () => {
         removeCollab(heroku2, getAcc1);
       }, 8000);
 
-      console.log("transffering one app is done");
+      setTimeout(() => {
+        console.log(`transffering ${appName} app is done `);
+      }, 10000);
     } else if (today === 1) {
       addCollab(heroku2, getAcc1);
 
@@ -197,6 +209,10 @@ const main = async () => {
       setTimeout(() => {
         removeCollab(heroku1, getAcc2);
       }, 8000);
+
+      setTimeout(() => {
+        console.log(`transffering ${appName} app is done `);
+      }, 10000);
     } else {
       console.log(`today is ${today}th day don't have to transfer apps`);
     }
