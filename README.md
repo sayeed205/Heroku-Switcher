@@ -19,8 +19,8 @@ Ever thought of how can you run your heroku app without worrying about dyno hour
 	<code><img height="50" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="Node.js" title="Node.js" /></code>
 	<code><img height="50" src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png" alt="Express" title="Express" /></code>
 	<code><img height="50" src="https://user-images.githubusercontent.com/25181517/182884177-d48a8579-2cd0-447a-b9a6-ffc7cb02560e.png" alt="mongoDB" title="mongoDB" /></code>
-	<code><img height="40" src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg" alt="TailwindCSS" title="mongoDB" /></code>
-	<code><img height="50" src="https://brand.heroku.com/static/media/heroku-logotype-vertical.f7e1193f.svg" alt="TailwindCSS" title="mongoDB" /></code>
+	<code><img height="40" src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg" alt="TailwindCSS" title="TailwindCSS" /></code>
+	<code><img height="50" src="https://brand.heroku.com/static/media/heroku-logotype-vertical.f7e1193f.svg" alt="Heroku" title="Heroku" /></code>
 </div>
 
 ## Usage
