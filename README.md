@@ -59,23 +59,27 @@ Ever thought of how can you run your heroku app without worrying about dyno hour
 
 - Setup Environment variables
   ```bash
-  	# create .env file
-  	touch .env
-  	# add environment variables
-  	PORT=5000
-    MONGO_URI= #your mongoDB uri
-    JWT_SECRET= #your jwt secret to auth user can be anything
-    DB_NAME= #your mongoDB name
-    COLLECTION_NAME= #your mongoDB collection name
+  # create .env file
+  touch .env
+  # add environment variables
+  PORT=5000
+  MONGO_URI= #your mongoDB uri
+  JWT_SECRET= #your jwt secret to auth user can be anything
+  DB_NAME= #your mongoDB name
+  COLLECTION_NAME= #your mongoDB collection name
   NODE_ENV=production
   ```
 - install add dependencies and make a production build for front end
   ```bash
-  	npm run build
+  npm run build
   ```
 - start the app
   ```bash
-  	npm start
+  npm start
+  ```
+- open the app in browser
+  ```bash
+  http://localhost:5000
   ```
 
 ### Heroku
