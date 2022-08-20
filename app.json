@@ -1,0 +1,41 @@
+{
+  "name": "Heroku Switcher",
+  "description": "A small web to run your Heroku apps without worrying about dynos",
+  "keywords": ["heroku", "dynos", "web-app"],
+  "website": "https://hs.hitarashi.in",
+  "repository": "https://github.com/sayeed205/Heroku-Switcher",
+  "success_url": "/",
+  "env": {
+    "MONGO_URI": {
+      "description": "Your mongoDB URI to connect to DATABASE. Get it from MongoDB Atlas",
+      "value": "",
+      "required": true
+    },
+    "JWT_SECRET": {
+      "description": "Your JWT secret, can be anything",
+      "value": "xcukivhldifuhviuzhbxfugpaiubsdfg",
+      "required": true
+    },
+    "DB_NAME": {
+      "description": "Your DATABASE name",
+      "value": "test",
+      "required": true
+    },
+    "COLLECTION_NAME": {
+      "description": "Your COLLECTION name",
+      "value": "apps",
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
