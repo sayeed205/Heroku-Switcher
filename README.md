@@ -38,7 +38,55 @@ Ever thought of how can you run your heroku app without worrying about dyno hour
 ## Tips & Tricks for Heroku
 
 - If you are using Gmail you can use googlemail.com domain to create new heroku account as Second account.
-- You can make UL account in heroku by using a "+" and a name after your mail <br> examle: <br><code>sayeed205@gmail.com</code> this is my main mail and I can use <code>sayeed205+xyz@gmail.com</code> to create new account in heroku.
+- You can make UL account in heroku by using a "+" and a name after your mail <br> example: <br><code>sayeed205@gmail.com</code> this is my main mail and I can use <code>sayeed205+xyz@gmail.com</code> to create new account in heroku.
+  <b>If your main mail banned in heroku then this methode won't work</b>
+
+## Deployment
+
+### Local/VPS
+
+- install nodeJS
+- ```bash
+  # clone this repo
+  git clone https://github.com/sayeed205/Heroku-Switcher.git
+
+  #change directory to the repo
+  cd Heroku-Switcher
+
+  # install node modules
+  npm i
+  ```
+
+- Setup Environment variables
+  ```bash
+  	# create .env file
+  	touch .env
+  	# add environment variables
+  	PORT=5000
+    MONGO_URI= #your mongoDB uri
+    JWT_SECRET= #your jwt secret to auth user can be anything
+    DB_NAME= #your mongoDB name
+    COLLECTION_NAME= #your mongoDB collection name
+  NODE_ENV=production
+  ```
+- install add dependencies and make a production build for front end
+  ```bash
+  	npm run build
+  ```
+- start the app
+  ```bash
+  	npm start
+  ```
+
+### Heroku
+
+<a href="https://heroku.com/deploy">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+
+### Other Deployment Methods
+
+- <b>WIP</b>
 
 ## Contributing
 
